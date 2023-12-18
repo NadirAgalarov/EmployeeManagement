@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.employeemanagement.controller.EmployeeControllerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-12-17T20:16:31" hostname="DESKTOP-M08484N" time="0.086">
+  <properties/>
+  <testcase name="getEmployeeTest()" classname="com.example.employeemanagement.controller.EmployeeControllerTest" time="0.025"/>
+  <testcase name="saveEmployeeTest()" classname="com.example.employeemanagement.controller.EmployeeControllerTest" time="0.016"/>
+  <testcase name="deleteEmployeeTest()" classname="com.example.employeemanagement.controller.EmployeeControllerTest" time="0.012"/>
+  <testcase name="updateEmployeeTest()" classname="com.example.employeemanagement.controller.EmployeeControllerTest" time="0.016"/>
+  <testcase name="getAllEmployeeTest()" classname="com.example.employeemanagement.controller.EmployeeControllerTest" time="0.011"/>
+  <system-out><![CDATA[2023-12-18T00:16:30.277+04:00  INFO 2552 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.employeemanagement.controller.EmployeeControllerTest]: EmployeeControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-18T00:16:30.283+04:00  INFO 2552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.employeemanagement.EmployeeManagementApplication for test class com.example.employeemanagement.controller.EmployeeControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2023-12-18T00:16:30.320+04:00  INFO 2552 --- [    Test worker] c.e.e.controller.EmployeeControllerTest  : Starting EmployeeControllerTest using Java 21 with PID 2552 (started by Kochari in D:\lesson\Projects\EmployeeManagement)
+2023-12-18T00:16:30.320+04:00  INFO 2552 --- [    Test worker] c.e.e.controller.EmployeeControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2023-12-18T00:16:30.571+04:00  INFO 2552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-18T00:16:30.592+04:00  INFO 2552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 5 JPA repository interfaces.
+2023-12-18T00:16:30.785+04:00  INFO 2552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-18T00:16:30.792+04:00  INFO 2552 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-18T00:16:30.800+04:00  INFO 2552 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-18T00:16:30.803+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-12-18T00:16:30.836+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15554017
+2023-12-18T00:16:30.837+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-12-18T00:16:30.838+04:00  WARN 2552 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-18T00:16:30.838+04:00  WARN 2552 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-12-18T00:16:31.011+04:00  INFO 2552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-18T00:16:31.084+04:00  INFO 2552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-18T00:16:31.299+04:00  WARN 2552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-18T00:16:31.421+04:00  INFO 2552 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@612d3732, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fc53b18, org.springframework.security.web.context.SecurityContextHolderFilter@315449e6, org.springframework.security.web.header.HeaderWriterFilter@34195ce5, org.springframework.web.filter.CorsFilter@1cac6a4f, org.springframework.security.web.authentication.logout.LogoutFilter@391aee9, com.example.employeemanagement.security.AuthFilter@4305b87e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1741e4a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e194937, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e25ae24, org.springframework.security.web.access.ExceptionTranslationFilter@4c16a6e7, org.springframework.security.web.access.intercept.AuthorizationFilter@3f19ac42]
+2023-12-18T00:16:31.873+04:00  INFO 2552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-12-18T00:16:31.873+04:00  INFO 2552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-12-18T00:16:31.874+04:00  INFO 2552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-12-18T00:16:31.883+04:00  INFO 2552 --- [    Test worker] c.e.e.controller.EmployeeControllerTest  : Started EmployeeControllerTest in 1.595 seconds (process running for 17.826)
+2023-12-18T00:16:31.905+04:00  WARN 2552 --- [    Test worker] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/v1/employee-management/employee/1' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/employee-management/employee
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"96"]
+             Body = {"name":"Aqil","surname":"Abbasov","email":"aqil.abbasov@mail.com","positionId":1,"status":true}
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.EmployeeController
+           Method = com.example.employeemanagement.controller.EmployeeController#saveEmployee(EmployeeRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":1,"name":"Aqil","surname":"Abbasov","email":"aqil.abbasov@mail.com","positionId":1,"status":true}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/v1/employee-management/employee/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.EmployeeController
+           Method = com.example.employeemanagement.controller.EmployeeController#deleteEmployee(int)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = PATCH
+      Request URI = /api/v1/employee-management/employee/1
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"96"]
+             Body = {"name":"Aqil","surname":"Abbasov","email":"aqil.abbasov@mail.com","positionId":1,"status":true}
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.EmployeeController
+           Method = com.example.employeemanagement.controller.EmployeeController#updateEmployee(int, EmployeeRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":1,"name":"Aqil","surname":"Abbasov","email":"aqil.abbasov@mail.com","positionId":1,"status":true}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/employee-management/employee/all
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.EmployeeController
+           Method = com.example.employeemanagement.controller.EmployeeController#getAllEmployee()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = [{"id":1,"name":"Aqil","surname":"Abbasov","email":"aqil.abbasov@mail.com","positionId":1,"status":true},{"id":2,"name":"Samir","surname":"Quliyev","email":"samir.quliyec@mail.com","positionId":2,"status":true}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

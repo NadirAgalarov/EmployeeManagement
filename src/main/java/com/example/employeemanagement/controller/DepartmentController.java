@@ -1,35 +1,29 @@
 package com.example.employeemanagement.controller;
 
-import com.example.employeemanagement.model.DepartmentRequest;
-import com.example.employeemanagement.model.DepartmentResponse;
+import com.example.employeemanagement.model.request.DepartmentRequest;
+import com.example.employeemanagement.model.response.DepartmentResponse;
 import com.example.employeemanagement.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/employee-management/department")
+@RequestMapping("${root.url}/department")
 @RequiredArgsConstructor
 public class DepartmentController {
     private final DepartmentService departmentService;
 
     @PostMapping
-    public DepartmentResponse saveDepartment(@RequestBody DepartmentRequest request){
+    public Optional<DepartmentResponse> saveDepartment(@RequestBody DepartmentRequest request){
         return departmentService.saveDepartment(request);
     }
 
     @GetMapping("/{id}")
-    public DepartmentResponse getDepartament(@PathVariable int id){
-        return departmentService.getDepartment(id);
+    public Optional<DepartmentResponse> getDepartamentById(@PathVariable int id){
+        return departmentService.getDepartmentById(id);
     }
 
     @GetMapping("/all")
@@ -37,8 +31,8 @@ public class DepartmentController {
         return departmentService.getAllDepartment();
     }
 
-    @PutMapping("/{id}")
-    public DepartmentResponse updateDepartment(@PathVariable int id,@RequestBody DepartmentRequest request){
+    @PatchMapping("/{id}")
+    public Optional<DepartmentResponse> updateDepartment(@PathVariable int id,@RequestBody DepartmentRequest request){
         return departmentService.updateDepartment(id, request);
     }
 

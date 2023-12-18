@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.employeemanagement.controller.DepartmentControllerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-12-17T20:16:30" hostname="DESKTOP-M08484N" time="0.102">
+  <properties/>
+  <testcase name="updateDepartmentTest()" classname="com.example.employeemanagement.controller.DepartmentControllerTest" time="0.028"/>
+  <testcase name="getAllDepartmentTest()" classname="com.example.employeemanagement.controller.DepartmentControllerTest" time="0.023"/>
+  <testcase name="deleteDepartmentTest()" classname="com.example.employeemanagement.controller.DepartmentControllerTest" time="0.019"/>
+  <testcase name="getDepartmentTest()" classname="com.example.employeemanagement.controller.DepartmentControllerTest" time="0.01"/>
+  <testcase name="saveDepartmentTest()" classname="com.example.employeemanagement.controller.DepartmentControllerTest" time="0.015"/>
+  <system-out><![CDATA[2023-12-18T00:16:28.219+04:00  INFO 2552 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.employeemanagement.controller.DepartmentControllerTest]: DepartmentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-18T00:16:28.222+04:00  INFO 2552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.employeemanagement.EmployeeManagementApplication for test class com.example.employeemanagement.controller.DepartmentControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2023-12-18T00:16:28.282+04:00  INFO 2552 --- [    Test worker] c.e.e.c.DepartmentControllerTest         : Starting DepartmentControllerTest using Java 21 with PID 2552 (started by Kochari in D:\lesson\Projects\EmployeeManagement)
+2023-12-18T00:16:28.282+04:00  INFO 2552 --- [    Test worker] c.e.e.c.DepartmentControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2023-12-18T00:16:28.611+04:00  INFO 2552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-18T00:16:28.650+04:00  INFO 2552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2023-12-18T00:16:28.921+04:00  INFO 2552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-18T00:16:28.921+04:00  INFO 2552 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-18T00:16:28.935+04:00  INFO 2552 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-18T00:16:28.935+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-18T00:16:28.972+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9d7d83d
+2023-12-18T00:16:28.973+04:00  INFO 2552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-18T00:16:28.974+04:00  WARN 2552 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-18T00:16:28.974+04:00  WARN 2552 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-12-18T00:16:29.155+04:00  INFO 2552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-18T00:16:29.228+04:00  INFO 2552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-18T00:16:29.443+04:00  WARN 2552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-18T00:16:29.558+04:00  INFO 2552 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@659b0c20, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c696163, org.springframework.security.web.context.SecurityContextHolderFilter@61f990b, org.springframework.security.web.header.HeaderWriterFilter@2f75c413, org.springframework.web.filter.CorsFilter@247e1f35, org.springframework.security.web.authentication.logout.LogoutFilter@205b3a1a, com.example.employeemanagement.security.AuthFilter@f5a1b27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c63146c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b2235a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a1b4074, org.springframework.security.web.access.ExceptionTranslationFilter@3662309d, org.springframework.security.web.access.intercept.AuthorizationFilter@eba003e]
+2023-12-18T00:16:30.158+04:00  INFO 2552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-12-18T00:16:30.158+04:00  INFO 2552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-12-18T00:16:30.159+04:00  INFO 2552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-12-18T00:16:30.160+04:00  INFO 2552 --- [    Test worker] c.e.e.c.DepartmentControllerTest         : Started DepartmentControllerTest in 1.931 seconds (process running for 16.11)
+2023-12-18T00:16:30.175+04:00  WARN 2552 --- [    Test worker] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/v1/employee-management/department/1' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+
+MockHttpServletRequest:
+      HTTP Method = PATCH
+      Request URI = /api/v1/employee-management/department/1
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"13"]
+             Body = {"name":"IT"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.DepartmentController
+           Method = com.example.employeemanagement.controller.DepartmentController#updateDepartment(int, DepartmentRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":1,"name":"IT"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/employee-management/department/all
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.DepartmentController
+           Method = com.example.employeemanagement.controller.DepartmentController#getAllDepartments()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = [{"id":1,"name":"IT"},{"id":1,"name":"Security"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/v1/employee-management/department/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.DepartmentController
+           Method = com.example.employeemanagement.controller.DepartmentController#deleteDepartment(int)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/employee-management/department
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"13"]
+             Body = {"name":"IT"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.employeemanagement.controller.DepartmentController
+           Method = com.example.employeemanagement.controller.DepartmentController#saveDepartment(DepartmentRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":1,"name":"IT"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

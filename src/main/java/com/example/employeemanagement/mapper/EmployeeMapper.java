@@ -1,8 +1,8 @@
 package com.example.employeemanagement.mapper;
 
 import com.example.employeemanagement.entity.Employee;
-import com.example.employeemanagement.model.EmployeeRequest;
-import com.example.employeemanagement.model.EmployeeResponse;
+import com.example.employeemanagement.model.request.EmployeeRequest;
+import com.example.employeemanagement.model.response.EmployeeResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -19,17 +19,13 @@ import java.util.List;
 public abstract class EmployeeMapper {
     public  static final EmployeeMapper INSTANCE= Mappers.getMapper(EmployeeMapper.class);
 
-    @Mapping(source = "department",target = "departmentResponse")
-    @Mapping(source = "position",target = "positionResponse")
-    public abstract EmployeeResponse entityToResponse(Employee employee);
     @Mapping(target = "position.id",source = "positionId")
-    @Mapping(target = "department.id",source = "departmentId")
     public abstract Employee requestToEntity(EmployeeRequest request);
+    @Mapping(source = "position.id",target = "positionId")
+    public abstract EmployeeResponse entityToResponse(Employee employee);
 
     public abstract List<EmployeeResponse> entityListToResponseList(List<Employee> employees);
     @Mapping(target = "position.id",source = "positionId")
-    @Mapping(target = "department.id",source = "departmentId")
-    @Mapping(target = "department.position.id" , ignore = true)
     public abstract void updateEntity(@MappingTarget Employee employee,EmployeeRequest request);
 
 

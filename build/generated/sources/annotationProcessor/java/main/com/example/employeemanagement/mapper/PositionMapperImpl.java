@@ -1,15 +1,16 @@
 package com.example.employeemanagement.mapper;
 
+import com.example.employeemanagement.entity.Department;
 import com.example.employeemanagement.entity.Position;
-import com.example.employeemanagement.model.PositionRequest;
-import com.example.employeemanagement.model.PositionResponse;
+import com.example.employeemanagement.model.request.PositionRequest;
+import com.example.employeemanagement.model.response.PositionResponse;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-28T18:07:00+0400",
+    date = "2023-12-18T12:55:17+0400",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.4.jar, environment: Java 21 (Oracle Corporation)"
 )
 public class PositionMapperImpl extends PositionMapper {
@@ -22,10 +23,15 @@ public class PositionMapperImpl extends PositionMapper {
 
         Position.PositionBuilder position = Position.builder();
 
-        if ( request.getName() != null ) {
-            position.name( request.getName() );
+        if ( request != null ) {
+            position.department( positionRequestToDepartment( request ) );
         }
-        position.salary( request.getSalary() );
+        if ( request.name() != null ) {
+            position.name( request.name() );
+        }
+        if ( request.salary() != null ) {
+            position.salary( request.salary() );
+        }
 
         return position.build();
     }
@@ -36,15 +42,21 @@ public class PositionMapperImpl extends PositionMapper {
             return null;
         }
 
-        PositionResponse.PositionResponseBuilder positionResponse = PositionResponse.builder();
+        int departmentId = 0;
+        int id = 0;
+        String name = null;
+        double salary = 0.0d;
 
-        positionResponse.id( position.getId() );
+        departmentId = positionDepartmentId( position );
+        id = position.getId();
         if ( position.getName() != null ) {
-            positionResponse.name( position.getName() );
+            name = position.getName();
         }
-        positionResponse.salary( position.getSalary() );
+        salary = position.getSalary();
 
-        return positionResponse.build();
+        PositionResponse positionResponse = new PositionResponse( id, name, salary, departmentId );
+
+        return positionResponse;
     }
 
     @Override
@@ -67,9 +79,51 @@ public class PositionMapperImpl extends PositionMapper {
             return;
         }
 
-        if ( request.getName() != null ) {
-            position.setName( request.getName() );
+        if ( position.getDepartment() == null ) {
+            position.setDepartment( Department.builder().build() );
         }
-        position.setSalary( request.getSalary() );
+        positionRequestToDepartment1( request, position.getDepartment() );
+        if ( request.name() != null ) {
+            position.setName( request.name() );
+        }
+        if ( request.salary() != null ) {
+            position.setSalary( request.salary() );
+        }
+    }
+
+    protected Department positionRequestToDepartment(PositionRequest positionRequest) {
+        if ( positionRequest == null ) {
+            return null;
+        }
+
+        Department.DepartmentBuilder department = Department.builder();
+
+        if ( positionRequest.departmentId() != null ) {
+            department.id( positionRequest.departmentId() );
+        }
+
+        return department.build();
+    }
+
+    private int positionDepartmentId(Position position) {
+        if ( position == null ) {
+            return 0;
+        }
+        Department department = position.getDepartment();
+        if ( department == null ) {
+            return 0;
+        }
+        int id = department.getId();
+        return id;
+    }
+
+    protected void positionRequestToDepartment1(PositionRequest positionRequest, Department mappingTarget) {
+        if ( positionRequest == null ) {
+            return;
+        }
+
+        if ( positionRequest.departmentId() != null ) {
+            mappingTarget.setId( positionRequest.departmentId() );
+        }
     }
 }

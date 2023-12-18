@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.employeemanagement.service.PositionServiceTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-12-17T20:16:35" hostname="DESKTOP-M08484N" time="0.072">
+  <properties/>
+  <testcase name="updatePositionExceptionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.006"/>
+  <testcase name="savePositionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.014"/>
+  <testcase name="findByIdExceptionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.005"/>
+  <testcase name="deletePositionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.005"/>
+  <testcase name="updatePositionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.005"/>
+  <testcase name="getAllPositionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.004"/>
+  <testcase name="findByIdTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.007"/>
+  <testcase name="getPositionExceptionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.004"/>
+  <testcase name="getPositionTest()" classname="com.example.employeemanagement.service.PositionServiceTest" time="0.004"/>
+  <system-out><![CDATA[2023-12-18T00:16:35.063+04:00  INFO 2552 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.employeemanagement.service.PositionServiceTest]: PositionServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-18T00:16:35.063+04:00  INFO 2552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.employeemanagement.EmployeeManagementApplication for test class com.example.employeemanagement.service.PositionServiceTest
+2023-12-18T00:16:35.148+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.start id: 1
+2023-12-18T00:16:35.155+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.savePosition.start request: PositionRequest[name=Junior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.157+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.savePosition.end response: PositionResponse[id=1, name=Junior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.165+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.findById.start id: 0
+2023-12-18T00:16:35.179+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.deletePosition.start id: 1
+2023-12-18T00:16:35.179+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.deletePosition.end for id: 1
+2023-12-18T00:16:35.186+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.start id: 1
+2023-12-18T00:16:35.186+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.end response: PositionResponse[id=1, name=Senior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.193+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getAllPosition.start 
+2023-12-18T00:16:35.193+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getAllPosition.end position count: 2
+2023-12-18T00:16:35.197+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.findById.start id: 1
+2023-12-18T00:16:35.197+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.end response: Position(id=1, name=Junior, salary=0.0, department=null, employeeSet=null, createdAt=null, updatedAt=null)
+2023-12-18T00:16:35.208+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.start id: 0
+2023-12-18T00:16:35.213+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.start id: 1
+2023-12-18T00:16:35.213+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.end response: PositionResponse[id=1, name=Junior, salary=0.0, departmentId=0]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

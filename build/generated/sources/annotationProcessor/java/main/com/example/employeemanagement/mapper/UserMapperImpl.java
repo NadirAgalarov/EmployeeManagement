@@ -3,15 +3,15 @@ package com.example.employeemanagement.mapper;
 import com.example.employeemanagement.entity.Role;
 import com.example.employeemanagement.entity.User;
 import com.example.employeemanagement.model.RoleDto;
-import com.example.employeemanagement.model.UserRequest;
-import com.example.employeemanagement.model.UserResponse;
+import com.example.employeemanagement.model.request.UserRequest;
+import com.example.employeemanagement.model.response.UserResponse;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-28T18:07:00+0400",
+    date = "2023-12-18T14:44:11+0400",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.4.jar, environment: Java 21 (Oracle Corporation)"
 )
 public class UserMapperImpl extends UserMapper {
@@ -55,20 +55,25 @@ public class UserMapperImpl extends UserMapper {
             return null;
         }
 
-        UserResponse.UserResponseBuilder userResponse = UserResponse.builder();
+        int id = 0;
+        String name = null;
+        String surname = null;
+        String email = null;
 
-        userResponse.id( user.getId() );
+        id = user.getId();
         if ( user.getName() != null ) {
-            userResponse.name( user.getName() );
+            name = user.getName();
         }
         if ( user.getSurname() != null ) {
-            userResponse.surname( user.getSurname() );
+            surname = user.getSurname();
         }
         if ( user.getEmail() != null ) {
-            userResponse.email( user.getEmail() );
+            email = user.getEmail();
         }
 
-        return userResponse.build();
+        UserResponse userResponse = new UserResponse( id, name, surname, email );
+
+        return userResponse;
     }
 
     protected Role roleDtoToRole(RoleDto roleDto) {
@@ -78,7 +83,7 @@ public class UserMapperImpl extends UserMapper {
 
         Role.RoleBuilder role = Role.builder();
 
-        role.id( roleDto.getId() );
+        role.id( roleDto.id() );
 
         return role.build();
     }

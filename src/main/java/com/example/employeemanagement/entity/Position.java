@@ -1,19 +1,17 @@
 package com.example.employeemanagement.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.boot.model.internal.Nullability;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -22,7 +20,6 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "position")
-
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +32,16 @@ public class Position {
     @Column(name = "salary")
     private double salary;
 
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade ={CascadeType.MERGE,CascadeType.PERSIST},
+            targetEntity =Department.class)
+    @JoinColumn(name = "dep_id",referencedColumnName = "id")
+    private Department department;
+
+    @OneToMany(mappedBy = "position",fetch = FetchType.LAZY,
+            cascade ={CascadeType.MERGE,CascadeType.PERSIST}, targetEntity = Employee.class)
+    private Set<Employee> employeeSet=new HashSet<>();
+
     @Column(name = "created_at")
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -42,4 +49,5 @@ public class Position {
     @Column(name = "updated_at")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
 }

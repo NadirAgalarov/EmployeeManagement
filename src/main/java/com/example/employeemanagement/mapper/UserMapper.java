@@ -2,8 +2,8 @@ package com.example.employeemanagement.mapper;
 
 
 import com.example.employeemanagement.entity.User;
-import com.example.employeemanagement.model.UserRequest;
-import com.example.employeemanagement.model.UserResponse;
+import com.example.employeemanagement.model.request.UserRequest;
+import com.example.employeemanagement.model.response.UserResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

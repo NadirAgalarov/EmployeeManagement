@@ -1,16 +1,7 @@
 package com.example.employeemanagement.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,11 +9,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.boot.model.source.spi.ForeignKeyContributingSource;
+import org.springframework.data.jpa.repository.Query;
 
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -39,10 +32,6 @@ public class Department {
     @Column(name = "name")
     private  String name;
 
-    @OneToMany(fetch = FetchType.EAGER )
-    @JoinColumn(name = "dep_id",referencedColumnName = "id",updatable = true)
-    private List<Position> positions ;
-
     @Column(name = "created_at")
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -51,4 +40,14 @@ public class Department {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+
+    @OneToMany(mappedBy = "department",fetch = FetchType.LAZY,
+            cascade ={CascadeType.MERGE,CascadeType.PERSIST}, targetEntity = Position.class)
+    private Set<Position> positions=new HashSet<>();
+
+    @PreRemove
+    public void preRremove(){
+        for(Position position: positions)
+            position.setDepartment(null);
+    }
 }

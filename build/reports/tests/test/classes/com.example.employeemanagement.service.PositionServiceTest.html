@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - PositionServiceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>PositionServiceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.employeemanagement.service.html">com.example.employeemanagement.service</a> &gt; PositionServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">9</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.054s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">deletePositionTest()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByIdExceptionTest()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByIdTest()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllPositionTest()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getPositionExceptionTest()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getPositionTest()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">savePositionTest()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePositionExceptionTest()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePositionTest()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-12-18T00:16:35.063+04:00  INFO 2552 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.employeemanagement.service.PositionServiceTest]: PositionServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-18T00:16:35.063+04:00  INFO 2552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.employeemanagement.EmployeeManagementApplication for test class com.example.employeemanagement.service.PositionServiceTest
+2023-12-18T00:16:35.148+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.start id: 1
+2023-12-18T00:16:35.155+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.savePosition.start request: PositionRequest[name=Junior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.157+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.savePosition.end response: PositionResponse[id=1, name=Junior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.165+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.findById.start id: 0
+2023-12-18T00:16:35.179+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.deletePosition.start id: 1
+2023-12-18T00:16:35.179+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.deletePosition.end for id: 1
+2023-12-18T00:16:35.186+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.start id: 1
+2023-12-18T00:16:35.186+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.updatePosition.end response: PositionResponse[id=1, name=Senior, salary=1200.0, departmentId=1]
+2023-12-18T00:16:35.193+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getAllPosition.start 
+2023-12-18T00:16:35.193+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getAllPosition.end position count: 2
+2023-12-18T00:16:35.197+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.findById.start id: 1
+2023-12-18T00:16:35.197+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.end response: Position(id=1, name=Junior, salary=0.0, department=null, employeeSet=null, createdAt=null, updatedAt=null)
+2023-12-18T00:16:35.208+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.start id: 0
+2023-12-18T00:16:35.213+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.start id: 1
+2023-12-18T00:16:35.213+04:00  INFO 2552 --- [    Test worker] c.e.e.service.impl.PositionServiceImpl   : ActionLog.getPosition.end response: PositionResponse[id=1, name=Junior, salary=0.0, departmentId=0]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at Dec 18, 2023, 12:16:35 AM</p>
+</div>
+</div>
+</body>
+</html>

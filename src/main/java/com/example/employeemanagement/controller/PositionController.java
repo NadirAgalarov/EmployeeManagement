@@ -1,34 +1,29 @@
 package com.example.employeemanagement.controller;
 
-import com.example.employeemanagement.model.PositionRequest;
-import com.example.employeemanagement.model.PositionResponse;
+import com.example.employeemanagement.model.request.PositionRequest;
+import com.example.employeemanagement.model.response.PositionResponse;
 import com.example.employeemanagement.service.PositionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/employee-management/position")
+@RequestMapping("${root.url}/position")
 @RequiredArgsConstructor
 public class PositionController {
     private  final PositionService positionService;
 
     @PostMapping
-    public PositionResponse savePosition(@RequestBody PositionRequest positionRequest){
+    public Optional<PositionResponse> savePosition(@RequestBody PositionRequest positionRequest){
         return positionService.savePosition(positionRequest);
     }
 
     @GetMapping("/{id}")
-    public PositionResponse getPosition(@PathVariable int id){
-        return positionService.getPosition(id);
+    public Optional<PositionResponse> getPositionById(@PathVariable int id){
+        return positionService.getPositionById(id);
     }
 
     @GetMapping("/all")
@@ -36,8 +31,8 @@ public class PositionController {
         return positionService.getAllPosition();
     }
 
-    @PutMapping("/{id}")
-    public PositionResponse updatePosition(@RequestBody PositionRequest request, @PathVariable int id){
+    @PatchMapping("/{id}")
+    public Optional<PositionResponse> updatePosition(@RequestBody PositionRequest request, @PathVariable int id){
         return positionService.updatePosition(request,id);
     }
 
